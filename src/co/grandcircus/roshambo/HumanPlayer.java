@@ -2,20 +2,26 @@ package co.grandcircus.roshambo;
 
 public class HumanPlayer extends Player {
 
-    @Override
-    public Roshambo generateRoshambo() {
-	return null;
+    private String playerChoice;
+
+    public String getPlayerChoice() {
+	return playerChoice;
     }
 
-    public Roshambo generateRoshambo(String selection) {
-	if (selection.equalsIgnoreCase("rock"))
-	    return Roshambo.ROCK;
-	else if (selection.equalsIgnoreCase("paper"))
-	    return Roshambo.PAPER;
-	else if (selection.equalsIgnoreCase("scissors"))
-	    return Roshambo.SCISSORS;
-	else
-	    return null;
+    public void setPlayerChoice(String playerChoice) {
+	this.playerChoice = playerChoice;
+    }
+
+    @Override
+    public Roshambo generateRoshambo() {
+        if (playerChoice.equalsIgnoreCase("rock"))
+            return Roshambo.ROCK;
+        else if (playerChoice.equalsIgnoreCase("paper"))
+            return Roshambo.PAPER;
+        else if (playerChoice.equalsIgnoreCase("scissors"))
+            return Roshambo.SCISSORS;
+        else
+            return null;
     }
 
 }

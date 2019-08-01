@@ -31,7 +31,8 @@ public class RoshamboApp {
 	String run = "yes";
 	while(run.equalsIgnoreCase("yes")) {
 	    String selection = Validator.getValidRoshamboInput(userInput, "Rock, paper, or scissors? ");
-	    Roshambo playerChoice = player.generateRoshambo(selection);
+	    player.setPlayerChoice(selection);
+	    Roshambo playerChoice = player.generateRoshambo();
 	    Roshambo comChoice = com.generateRoshambo();
 
 	    String winOrLose = playerChoice.winLoseTie(comChoice);
